@@ -1,0 +1,10 @@
+import express from 'express';
+import { getAllJobs , createJobs, deleteJobs, updateJobs, getJobbyId } from '../controller/jobController.js';
+const app = express.Router();
+app.get('/', getAllJobs);
+app.get('/getjobbyid/:id', getJobbyId);
+app.post('/create', createJobs);
+app.delete('/delete/:id', deleteJobs);
+app.patch('/patch/:id', updateJobs);
+const jobRouter = app;
+export default jobRouter;
